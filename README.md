@@ -1,1 +1,1 @@
-# design-tokens
+# @fukamu/design-tokens
