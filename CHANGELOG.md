@@ -10,7 +10,7 @@ All notable contract changes are recorded here. Structural changes (rename, remo
 - Shared text, surface, border, accent, action, focus, danger, warning, and success colors.
 - Japanese system-font-first body stack, text sizes, weights, and line heights.
 - Spacing, radius, border width, minimum interaction target, and short motion duration.
-- Deterministic CSS, JSON, ESM, CommonJS, declarations, reference, Figma mapping, and versioned text bundle generation.
+- Deterministic CSS, JSON, ESM, CommonJS, declarations, reference, Figma mapping, and versioned text bundle generation, with private Figma primitives and explicit scope/binding policy.
 
 ### Explicitly excluded
 

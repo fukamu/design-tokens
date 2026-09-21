@@ -118,12 +118,23 @@ function figmaScopes(token) {
   if (token.type === "fontWeight") return ["FONT_WEIGHT"];
   if (token.type === "duration") return [];
   if (token.path.startsWith("font.size.")) return ["FONT_SIZE"];
-  if (token.path.startsWith("font.line-height.")) return ["LINE_HEIGHT"];
+  if (token.path.startsWith("font.line-height.")) return [];
   if (token.path.startsWith("spacing.")) return ["GAP"];
   if (token.path.startsWith("radius.")) return ["CORNER_RADIUS"];
   if (token.path.startsWith("border.width.")) return ["STROKE_FLOAT"];
   if (token.path.startsWith("interaction.target.")) return ["WIDTH_HEIGHT"];
   throw new Error(`${token.path}: missing Figma variable scope`);
+}
+
+function figmaScopeProjection(token, scopes) {
+  if (token.type === "duration") {
+    return { scopePolicy: "figma-native" };
+  }
+  const projection = { scopePolicy: "explicit", scopes };
+  if (token.path.startsWith("primitive.line-height.") || token.path.startsWith("font.line-height.")) {
+    projection.bindingPolicy = "reference-only";
+  }
+  return projection;
 }
 
 function figmaType(token) {
@@ -158,7 +169,7 @@ function generateFigmaMapping(allTokens, sourceRevision) {
         collection: target.name,
         mode: target.mode,
         figmaType: figmaType(token),
-        scopes: [],
+        ...figmaScopeProjection(token, []),
         codeSyntax: { WEB: `var(${cssVariableForPath(token.path)})` },
         value: figmaValue(token),
         sourceValue: token.value,
@@ -177,7 +188,7 @@ function generateFigmaMapping(allTokens, sourceRevision) {
       collection: target.name,
       mode: target.mode,
       figmaType: figmaType(token),
-      scopes: figmaScopes(token),
+      ...figmaScopeProjection(token, figmaScopes(token)),
       codeSyntax: { WEB: `var(${cssVariableForPath(token.path)})` },
       value: {
         kind: "VARIABLE_ALIAS",
@@ -202,6 +213,7 @@ function generateFigmaMapping(allTokens, sourceRevision) {
       requestedWeight: 400,
       fontSizePx: px("font.size.small"),
       lineHeight: { unit: "PERCENT", value: byPath.get("font.line-height.ui").value * 100 },
+      lineHeightApplication: "DIRECT_PERCENT",
       tokenPaths: ["font.family.body.ja", "font.size.small", "font.weight.regular", "font.line-height.ui"],
     },
     {
@@ -212,6 +224,7 @@ function generateFigmaMapping(allTokens, sourceRevision) {
       requestedWeight: 500,
       fontSizePx: px("font.size.small"),
       lineHeight: { unit: "PERCENT", value: byPath.get("font.line-height.ui").value * 100 },
+      lineHeightApplication: "DIRECT_PERCENT",
       tokenPaths: ["font.family.body.ja", "font.size.small", "font.weight.medium", "font.line-height.ui"],
     },
     {
@@ -222,6 +235,7 @@ function generateFigmaMapping(allTokens, sourceRevision) {
       requestedWeight: 400,
       fontSizePx: px("font.size.body"),
       lineHeight: { unit: "PERCENT", value: byPath.get("font.line-height.body.ja").value * 100 },
+      lineHeightApplication: "DIRECT_PERCENT",
       tokenPaths: ["font.family.body.ja", "font.size.body", "font.weight.regular", "font.line-height.body.ja"],
     },
     {
@@ -232,6 +246,7 @@ function generateFigmaMapping(allTokens, sourceRevision) {
       requestedWeight: 700,
       fontSizePx: px("font.size.body"),
       lineHeight: { unit: "PERCENT", value: byPath.get("font.line-height.body.ja").value * 100 },
+      lineHeightApplication: "DIRECT_PERCENT",
       tokenPaths: ["font.family.body.ja", "font.size.body", "font.weight.bold", "font.line-height.body.ja"],
     },
     {
@@ -242,6 +257,7 @@ function generateFigmaMapping(allTokens, sourceRevision) {
       requestedWeight: 400,
       fontSizePx: px("font.size.editor"),
       lineHeight: { unit: "PERCENT", value: byPath.get("font.line-height.editor").value * 100 },
+      lineHeightApplication: "DIRECT_PERCENT",
       tokenPaths: ["font.family.body.ja", "font.size.editor", "font.weight.regular", "font.line-height.editor"],
     },
   ];
@@ -264,14 +280,14 @@ function generateFigmaMapping(allTokens, sourceRevision) {
     },
   ];
   const collections = [
-    { name: "Primitives", mode: "Value", variableCount: 43 },
-    { name: "Color", mode: "Light", variableCount: 20 },
-    { name: "Typography", mode: "Value", variableCount: 11 },
-    { name: "Spacing", mode: "Value", variableCount: 7 },
-    { name: "Radius", mode: "Value", variableCount: 5 },
-    { name: "Border", mode: "Value", variableCount: 1 },
-    { name: "Interaction", mode: "Value", variableCount: 1 },
-    { name: "Motion", mode: "Value", variableCount: 1 },
+    { name: "Primitives", mode: "Value", variableCount: 43, hiddenFromPublishing: true },
+    { name: "Color", mode: "Light", variableCount: 20, hiddenFromPublishing: false },
+    { name: "Typography", mode: "Value", variableCount: 11, hiddenFromPublishing: false },
+    { name: "Spacing", mode: "Value", variableCount: 7, hiddenFromPublishing: false },
+    { name: "Radius", mode: "Value", variableCount: 5, hiddenFromPublishing: false },
+    { name: "Border", mode: "Value", variableCount: 1, hiddenFromPublishing: false },
+    { name: "Interaction", mode: "Value", variableCount: 1, hiddenFromPublishing: false },
+    { name: "Motion", mode: "Value", variableCount: 1, hiddenFromPublishing: false },
   ];
   for (const expected of collections) {
     const actual = variables.filter((variable) => variable.collection === expected.name && variable.mode === expected.mode).length;
@@ -290,6 +306,9 @@ function generateFigmaMapping(allTokens, sourceRevision) {
       primitiveColors: primitiveVariables.filter((variable) => variable.figmaType === "COLOR").length,
       publicVariables: publicVariables.length,
       totalVariables: variables.length,
+      explicitScopeVariables: variables.filter((variable) => variable.scopePolicy === "explicit").length,
+      figmaNativeScopeVariables: variables.filter((variable) => variable.scopePolicy === "figma-native").length,
+      referenceOnlyVariables: variables.filter((variable) => variable.bindingPolicy === "reference-only").length,
       textStyleCandidates: supportedTextStyles.length + unsupportedTextStyles.length,
       creatableTextStyles: supportedTextStyles.length,
       effectStyles: 0,
@@ -297,6 +316,9 @@ function generateFigmaMapping(allTokens, sourceRevision) {
     },
     notes: [
       "Git is canonical; Figma must not become an independent value source.",
+      "The Primitives collection is hidden from Library publishing; published semantic Variables remain aliases to these same-file sources.",
+      "Scopes are explicit for COLOR, FLOAT, and STRING Variables. TIMING scope is Figma-native and is not assigned by the projection.",
+      "Unitless line-height Variables are percent references only; Text Styles apply direct PERCENT line height and must not bind these Variables.",
       `Noto Sans JP represents the Git fallback stack in Figma only: ${byPath.get("font.family.body.ja").value.join(", ")}.`,
       "Notes dark mode and shadows are outside contract 0.1.0.",
     ],

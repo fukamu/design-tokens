@@ -92,7 +92,9 @@ Archive dependencies, sibling-directory `file:` dependencies, links, floating br
 
 ## Figma
 
-`dist/figma/mapping.json` maps the same source revision into eight collections and 89 Variables. Public Variables alias the corresponding primitive Variable. `1rem` maps to 16px, duration 160ms maps to Figma `TIMING` value 0.16 seconds, and unitless line height maps to percent.
+`dist/figma/mapping.json` maps the same source revision into eight collections and 89 Variables. Public Variables alias the corresponding primitive Variable. The Primitives collection is an internal alias source and is marked `hiddenFromPublishing`; Library consumers receive the seven public semantic collections. `1rem` maps to 16px and duration 160ms maps to Figma `TIMING` value 0.16 seconds.
+
+Scopes are explicitly assigned on all 87 COLOR, FLOAT, and STRING Variables, including empty scopes for primitives and reference-only line-height Variables. The two TIMING Variables omit `scopes` and declare `scopePolicy: "figma-native"` because Figma does not expose a configurable TIMING scope. Unitless line-height values map to percent references (145, 170, and 175), but must not be bound to Text Styles: Figma interprets a bound FLOAT as pixels. Text Styles instead apply direct PERCENT line height and retain the source token path as provenance.
 
 Figma uses Noto Sans JP only as the approved Windows/Android design representative; the Git system-font fallback stack remains the code contract and no web-font dependency is introduced. Two 600-weight Text Style candidates are explicitly unsupported because the connected Noto Sans JP family lacks an exact 600 style. Effect Styles and components are not created by contract `0.1.0`.
 
