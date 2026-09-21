@@ -1,0 +1,7 @@
+{
+  "$description": "Unresolved-alias fixture.",
+  "primitive": {
+    "value": { "$type": "number", "$value": 1, "$description": "Valid primitive." }
+  },
+  "value": { "$type": "number", "$value": "{primitive.missing}", "$description": "Missing alias target." }
+}

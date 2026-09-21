@@ -1,0 +1,11 @@
+{
+  "$description": "Invalid-color fixture.",
+  "primitive": {
+    "color": {
+      "$type": "color",
+      "$value": { "colorSpace": "srgb", "components": [1.1, 0, 0], "alpha": 1 },
+      "$description": "Out-of-range color."
+    }
+  },
+  "color": { "$type": "color", "$value": "{primitive.color}", "$description": "Public color." }
+}

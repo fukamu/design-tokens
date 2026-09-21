@@ -1,0 +1,11 @@
+{
+  "$description": "Adversarial but valid font-family fixture.",
+  "primitive": {
+    "family": {
+      "$type": "fontFamily",
+      "$value": ["Safe Sans", "Evil\\\"; color: red; /*", "Line\nBreak"],
+      "$description": "Font names requiring CSS escaping."
+    }
+  },
+  "family": { "$type": "fontFamily", "$value": "{primitive.family}", "$description": "Escaped family." }
+}

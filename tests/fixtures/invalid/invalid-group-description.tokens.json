@@ -1,0 +1,8 @@
+{
+  "$description": "Invalid group-description fixture.",
+  "primitive": {
+    "$description": 42,
+    "value": { "$type": "number", "$value": 1, "$description": "Primitive." }
+  },
+  "value": { "$type": "number", "$value": "{primitive.value}", "$description": "Public value." }
+}
