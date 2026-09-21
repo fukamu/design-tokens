@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "packageName": "@fukamu/design-tokens",
+  "contractVersion": "0.1.0",
+  "sourceRevision": "3b9477211dd967c33a44a25b96ac783ab50a098b",
+  "mode": "light",
+  "generatedBy": "scripts/generate.mjs",
+  "updateCommand": "npm run generate -- --source-revision <40-character-canonical-source-commit>",
+  "handEdited": false,
+  "artifacts": [
+    {
+      "path": "css/tokens.css",
+      "sha256": "22d3cbb282574f9b4c5a45b56a1acc8f17b73f1ccc4b3d34b6bbd2d6e664d227"
+    },
+    {
+      "path": "figma/mapping.json",
+      "sha256": "b4d2d9cb6f4029fc1819b261372975cd7d6937c20615a24f0acd0f6161c59cc7"
+    },
+    {
+      "path": "js/index.cjs",
+      "sha256": "eff1b7f797395f08221ec5cf6928a9090d90114b2b27a0358879997db937c496"
+    },
+    {
+      "path": "js/index.mjs",
+      "sha256": "d8b36045bfba0cbff12526daa28fa5dbeb89902c5419e378218864ef1f0cb88b"
+    },
+    {
+      "path": "json/tokens.json",
+      "sha256": "7d3d4759562ad7e0e51ffc258095cf06b7c70f5b83633b6e0cef3527931f9e78"
+    },
+    {
+      "path": "reference/tokens.md",
+      "sha256": "60b228b70303c0f3b52d8b515f863f499e4bda61294aa4c503290db7abfab662"
+    },
+    {
+      "path": "types/index.d.ts",
+      "sha256": "bb403111e8614db6c192fa057bffdb64a0360ae1426434ddcc0d2c23d6497e3f"
+    }
+  ]
+}
