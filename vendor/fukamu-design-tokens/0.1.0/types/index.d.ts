@@ -1,6 +1,6 @@
 // Generated from tokens/fukamu.tokens.json. DO NOT EDIT.
 // Contract version: 0.1.0
-// Canonical source revision: b57d1531f26c14e2f1f82440b9f150a3a185bd16
+// Canonical source revision: fce23b267d466f9a3fe2689c0197d4c4192cec9c
 export type TokenPath =
   "border.width.default" |
   "color.accent" |

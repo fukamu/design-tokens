@@ -1,6 +1,6 @@
 {
   "contractVersion": "0.1.0",
-  "sourceRevision": "b57d1531f26c14e2f1f82440b9f150a3a185bd16",
+  "sourceRevision": "fce23b267d466f9a3fe2689c0197d4c4192cec9c",
   "file": "FUKAMU Foundations",
   "collections": [
     {
@@ -64,7 +64,8 @@
     "textStyleCandidates": 7,
     "creatableTextStyles": 5,
     "effectStyles": 0,
-    "components": 0
+    "componentSets": 3,
+    "components": 10
   },
   "notes": [
     "Git is canonical; Figma must not become an independent value source.",
@@ -2183,5 +2184,276 @@
     }
   ],
   "effectStyles": [],
-  "components": []
+  "components": [
+    {
+      "name": "Action/Button",
+      "nodeId": "45:2",
+      "section": "Actions",
+      "representativeInstanceId": "46:4",
+      "purpose": "Primary shared action used by Cycle and Notes.",
+      "properties": [
+        {
+          "name": "Label",
+          "key": "Label#45:0",
+          "type": "TEXT",
+          "defaultValue": "続ける"
+        },
+        {
+          "name": "State",
+          "key": "State",
+          "type": "VARIANT",
+          "defaultValue": "Default",
+          "options": [
+            "Default",
+            "Hover",
+            "Pressed",
+            "Focus"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "name": "State=Default",
+          "nodeId": "44:2",
+          "tokenBindings": [
+            "color.action.primary",
+            "color.action.on-primary"
+          ]
+        },
+        {
+          "name": "State=Hover",
+          "nodeId": "44:4",
+          "tokenBindings": [
+            "color.action.primary-hover",
+            "color.action.on-primary"
+          ]
+        },
+        {
+          "name": "State=Pressed",
+          "nodeId": "44:6",
+          "tokenBindings": [
+            "color.action.primary-hover",
+            "color.action.on-primary"
+          ]
+        },
+        {
+          "name": "State=Focus",
+          "nodeId": "44:8",
+          "tokenBindings": [
+            "color.action.primary",
+            "color.action.on-primary",
+            "color.focus.ring",
+            "border.width.default"
+          ]
+        }
+      ],
+      "sharedTokenBindings": [
+        "interaction.target.min",
+        "spacing.2",
+        "spacing.4",
+        "radius.md"
+      ],
+      "textStyles": [
+        "Text/UI Small/Medium"
+      ],
+      "exclusions": [
+        "Secondary",
+        "Danger",
+        "Disabled",
+        "Icon"
+      ]
+    },
+    {
+      "name": "Form/Text field",
+      "nodeId": "49:3",
+      "section": "Forms",
+      "representativeInstanceId": "50:5",
+      "purpose": "Single-line shared text entry with explicit focus and validation feedback.",
+      "properties": [
+        {
+          "name": "Label",
+          "key": "Label#49:0",
+          "type": "TEXT",
+          "defaultValue": "ラベル"
+        },
+        {
+          "name": "Value",
+          "key": "Value#49:4",
+          "type": "TEXT",
+          "defaultValue": "入力内容"
+        },
+        {
+          "name": "Helper text",
+          "key": "Helper text#49:8",
+          "type": "TEXT",
+          "defaultValue": "補足テキスト"
+        },
+        {
+          "name": "Show label",
+          "key": "Show label#49:12",
+          "type": "BOOLEAN",
+          "defaultValue": true
+        },
+        {
+          "name": "Show helper",
+          "key": "Show helper#49:16",
+          "type": "BOOLEAN",
+          "defaultValue": true
+        },
+        {
+          "name": "State",
+          "key": "State",
+          "type": "VARIANT",
+          "defaultValue": "Default",
+          "options": [
+            "Default",
+            "Focus",
+            "Error"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "name": "State=Default",
+          "nodeId": "48:3",
+          "tokenBindings": [
+            "color.border.default",
+            "color.text.secondary"
+          ]
+        },
+        {
+          "name": "State=Focus",
+          "nodeId": "48:10",
+          "tokenBindings": [
+            "color.focus.ring",
+            "color.text.secondary"
+          ]
+        },
+        {
+          "name": "State=Error",
+          "nodeId": "48:17",
+          "tokenBindings": [
+            "color.status.danger.border",
+            "color.status.danger.foreground"
+          ]
+        }
+      ],
+      "sharedTokenBindings": [
+        "color.surface.default",
+        "color.text.primary",
+        "border.width.default",
+        "interaction.target.min",
+        "spacing.1",
+        "spacing.2",
+        "spacing.3",
+        "radius.md"
+      ],
+      "textStyles": [
+        "Text/UI Small/Regular",
+        "Text/UI Small/Medium"
+      ],
+      "exclusions": [
+        "Disabled",
+        "Textarea",
+        "Select",
+        "Search",
+        "Icon"
+      ]
+    },
+    {
+      "name": "Feedback/Status message",
+      "nodeId": "52:18",
+      "section": "Feedback",
+      "representativeInstanceId": "53:11",
+      "purpose": "Short shared Danger, Warning, and Success status feedback.",
+      "properties": [
+        {
+          "name": "Title",
+          "key": "Title#52:0",
+          "type": "TEXT",
+          "defaultValue": "ステータス"
+        },
+        {
+          "name": "Message",
+          "key": "Message#52:4",
+          "type": "TEXT",
+          "defaultValue": "状態の詳細をここに表示します。"
+        },
+        {
+          "name": "Show title",
+          "key": "Show title#52:8",
+          "type": "BOOLEAN",
+          "defaultValue": true
+        },
+        {
+          "name": "Tone",
+          "key": "Tone",
+          "type": "VARIANT",
+          "defaultValue": "Danger",
+          "options": [
+            "Danger",
+            "Warning",
+            "Success"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "name": "Tone=Danger",
+          "nodeId": "52:9",
+          "tokenBindings": [
+            "color.status.danger.surface",
+            "color.status.danger.foreground",
+            "color.status.danger.border"
+          ]
+        },
+        {
+          "name": "Tone=Warning",
+          "nodeId": "52:12",
+          "tokenBindings": [
+            "color.status.warning.surface",
+            "color.status.warning.foreground",
+            "color.status.warning.border"
+          ]
+        },
+        {
+          "name": "Tone=Success",
+          "nodeId": "52:15",
+          "tokenBindings": [
+            "color.status.success.surface",
+            "color.status.success.foreground"
+          ],
+          "border": "none"
+        }
+      ],
+      "sharedTokenBindings": [
+        "border.width.default",
+        "spacing.2",
+        "spacing.4",
+        "radius.lg"
+      ],
+      "textStyles": [
+        "Text/UI Small/Regular",
+        "Text/UI Small/Medium"
+      ],
+      "exclusions": [
+        "Product notification flow",
+        "Product card or paper treatment",
+        "Icon"
+      ]
+    }
+  ],
+  "componentQa": {
+    "viewportNodeId": "56:3",
+    "viewportWidthPx": 412,
+    "instanceNodeIds": [
+      "56:5",
+      "56:7",
+      "56:14",
+      "56:21",
+      "56:24"
+    ],
+    "mainComponentPropagation": "verified-and-reverted",
+    "directPrimitiveBindings": 0
+  }
 }
