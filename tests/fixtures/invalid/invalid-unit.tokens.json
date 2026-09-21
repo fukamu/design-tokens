@@ -1,0 +1,7 @@
+{
+  "$description": "Invalid-unit fixture.",
+  "primitive": {
+    "size": { "$type": "dimension", "$value": { "value": 1, "unit": "em" }, "$description": "Invalid unit." }
+  },
+  "size": { "$type": "dimension", "$value": "{primitive.size}", "$description": "Public size." }
+}

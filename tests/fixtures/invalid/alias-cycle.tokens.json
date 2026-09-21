@@ -1,0 +1,8 @@
+{
+  "$description": "Alias-cycle fixture.",
+  "primitive": {
+    "value": { "$type": "number", "$value": 1, "$description": "Unused primitive." }
+  },
+  "first": { "$type": "number", "$value": "{second}", "$description": "First half of cycle." },
+  "second": { "$type": "number", "$value": "{first}", "$description": "Second half of cycle." }
+}

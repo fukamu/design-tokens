@@ -1,0 +1,13 @@
+{
+  "$description": "CSS-name-collision fixture.",
+  "primitive": {
+    "first": { "$type": "number", "$value": 1, "$description": "First primitive." },
+    "second": { "$type": "number", "$value": 2, "$description": "Second primitive." }
+  },
+  "a-b": {
+    "c": { "$type": "number", "$value": "{primitive.first}", "$description": "First public token." }
+  },
+  "a": {
+    "b-c": { "$type": "number", "$value": "{primitive.second}", "$description": "Second public token." }
+  }
+}

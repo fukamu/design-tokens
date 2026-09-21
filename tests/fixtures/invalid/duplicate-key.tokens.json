@@ -1,0 +1,7 @@
+{
+  "$description": "Duplicate-key fixture.",
+  "primitive": {
+    "value": { "$type": "number", "$value": 1, "$description": "First." },
+    "value": { "$type": "number", "$value": 2, "$description": "Second." }
+  }
+}

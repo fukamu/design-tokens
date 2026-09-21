@@ -1,0 +1,7 @@
+{
+  "$description": "Public-literal fixture.",
+  "primitive": {
+    "value": { "$type": "number", "$value": 1, "$description": "Valid primitive." }
+  },
+  "value": { "$type": "number", "$value": 1, "$description": "Invalid duplicate literal source." }
+}

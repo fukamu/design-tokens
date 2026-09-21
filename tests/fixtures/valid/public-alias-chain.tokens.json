@@ -1,0 +1,8 @@
+{
+  "$description": "Valid public alias-chain fixture.",
+  "primitive": {
+    "value": { "$type": "number", "$value": 1, "$description": "Valid primitive." }
+  },
+  "base": { "$type": "number", "$value": "{primitive.value}", "$description": "Public alias." },
+  "derived": { "$type": "number", "$value": "{base}", "$description": "Public alias that still resolves to the primitive." }
+}

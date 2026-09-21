@@ -1,0 +1,7 @@
+{
+  "$description": "Type-mismatch fixture.",
+  "primitive": {
+    "value": { "$type": "number", "$value": 1, "$description": "Number primitive." }
+  },
+  "size": { "$type": "dimension", "$value": "{primitive.value}", "$description": "Dimension with number target." }
+}

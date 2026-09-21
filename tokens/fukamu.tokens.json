@@ -1,0 +1,250 @@
+{
+  "$description": "FUKAMU shared light-mode design tokens. Literal values live only below primitive; every public token is an alias.",
+  "primitive": {
+    "$description": "Private literal values used by the public contract.",
+    "color": {
+      "neutral-0": {
+        "$type": "color",
+        "$value": { "colorSpace": "srgb", "components": [1, 1, 1], "alpha": 1 },
+        "$description": "White."
+      },
+      "slate-900": {
+        "$type": "color",
+        "$value": { "colorSpace": "srgb", "components": [0.062745098, 0.137254902, 0.247058824], "alpha": 1 },
+        "$description": "Primary blue-black ink."
+      },
+      "slate-600": {
+        "$type": "color",
+        "$value": { "colorSpace": "srgb", "components": [0.321568627, 0.396078431, 0.498039216], "alpha": 1 },
+        "$description": "Secondary blue-gray ink."
+      },
+      "blue-50": {
+        "$type": "color",
+        "$value": { "colorSpace": "srgb", "components": [0.929411765, 0.964705882, 1], "alpha": 1 },
+        "$description": "Subtle blue surface."
+      },
+      "blue-200": {
+        "$type": "color",
+        "$value": { "colorSpace": "srgb", "components": [0.8, 0.854901961, 0.925490196], "alpha": 1 },
+        "$description": "Default blue-gray border."
+      },
+      "blue-300": {
+        "$type": "color",
+        "$value": { "colorSpace": "srgb", "components": [0.619607843, 0.737254902, 0.882352941], "alpha": 1 },
+        "$description": "Strong blue-gray border."
+      },
+      "blue-500": {
+        "$type": "color",
+        "$value": { "colorSpace": "srgb", "components": [0.290196078, 0.564705882, 0.88627451], "alpha": 1 },
+        "$description": "Shared accent blue."
+      },
+      "blue-800": {
+        "$type": "color",
+        "$value": { "colorSpace": "srgb", "components": [0.050980392, 0.231372549, 0.556862745], "alpha": 1 },
+        "$description": "Primary action blue."
+      },
+      "blue-900": {
+        "$type": "color",
+        "$value": { "colorSpace": "srgb", "components": [0.031372549, 0.168627451, 0.411764706], "alpha": 1 },
+        "$description": "Primary action hover blue."
+      },
+      "red-50": {
+        "$type": "color",
+        "$value": { "colorSpace": "srgb", "components": [1, 0.941176471, 0.952941176], "alpha": 1 },
+        "$description": "Danger surface."
+      },
+      "red-200": {
+        "$type": "color",
+        "$value": { "colorSpace": "srgb", "components": [0.949019608, 0.729411765, 0.768627451], "alpha": 1 },
+        "$description": "Danger border."
+      },
+      "red-700": {
+        "$type": "color",
+        "$value": { "colorSpace": "srgb", "components": [0.705882353, 0.137254902, 0.22745098], "alpha": 1 },
+        "$description": "Danger foreground."
+      },
+      "red-800": {
+        "$type": "color",
+        "$value": { "colorSpace": "srgb", "components": [0.521568627, 0.090196078, 0.164705882], "alpha": 1 },
+        "$description": "Strong danger foreground."
+      },
+      "amber-50": {
+        "$type": "color",
+        "$value": { "colorSpace": "srgb", "components": [1, 0.968627451, 0.858823529], "alpha": 1 },
+        "$description": "Warning surface."
+      },
+      "amber-200": {
+        "$type": "color",
+        "$value": { "colorSpace": "srgb", "components": [0.917647059, 0.850980392, 0.619607843], "alpha": 1 },
+        "$description": "Warning border."
+      },
+      "amber-800": {
+        "$type": "color",
+        "$value": { "colorSpace": "srgb", "components": [0.443137255, 0.317647059, 0.039215686], "alpha": 1 },
+        "$description": "Warning foreground."
+      },
+      "teal-50": {
+        "$type": "color",
+        "$value": { "colorSpace": "srgb", "components": [0.850980392, 0.952941176, 0.937254902], "alpha": 1 },
+        "$description": "Success surface."
+      },
+      "teal-800": {
+        "$type": "color",
+        "$value": { "colorSpace": "srgb", "components": [0.02745098, 0.364705882, 0.333333333], "alpha": 1 },
+        "$description": "Success foreground."
+      }
+    },
+    "font-family": {
+      "ja-sans": {
+        "$type": "fontFamily",
+        "$value": ["Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", "Meiryo", "Noto Sans JP", "Noto Sans CJK JP", "system-ui", "sans-serif"],
+        "$description": "Japanese system-font-first sans-serif stack."
+      }
+    },
+    "font-size": {
+      "small": {
+        "$type": "dimension",
+        "$value": { "value": 0.875, "unit": "rem" },
+        "$description": "Small text size."
+      },
+      "base": {
+        "$type": "dimension",
+        "$value": { "value": 1, "unit": "rem" },
+        "$description": "Default body and editor text size."
+      }
+    },
+    "font-weight": {
+      "regular": { "$type": "fontWeight", "$value": 400, "$description": "Regular weight." },
+      "medium": { "$type": "fontWeight", "$value": 500, "$description": "Medium weight." },
+      "semibold": { "$type": "fontWeight", "$value": 600, "$description": "Semibold weight." },
+      "bold": { "$type": "fontWeight", "$value": 700, "$description": "Bold weight." }
+    },
+    "line-height": {
+      "ui": { "$type": "number", "$value": 1.45, "$description": "Compact UI line height." },
+      "body-ja": { "$type": "number", "$value": 1.7, "$description": "Japanese body line height." },
+      "editor": { "$type": "number", "$value": 1.75, "$description": "Editor line height." }
+    },
+    "spacing": {
+      "1": { "$type": "dimension", "$value": { "value": 0.25, "unit": "rem" }, "$description": "Spacing step 1." },
+      "2": { "$type": "dimension", "$value": { "value": 0.5, "unit": "rem" }, "$description": "Spacing step 2." },
+      "3": { "$type": "dimension", "$value": { "value": 0.75, "unit": "rem" }, "$description": "Spacing step 3." },
+      "4": { "$type": "dimension", "$value": { "value": 1, "unit": "rem" }, "$description": "Spacing step 4." },
+      "5": { "$type": "dimension", "$value": { "value": 1.25, "unit": "rem" }, "$description": "Spacing step 5." },
+      "6": { "$type": "dimension", "$value": { "value": 1.5, "unit": "rem" }, "$description": "Spacing step 6." },
+      "8": { "$type": "dimension", "$value": { "value": 2, "unit": "rem" }, "$description": "Spacing step 8." }
+    },
+    "radius": {
+      "sm": { "$type": "dimension", "$value": { "value": 0.5, "unit": "rem" }, "$description": "Small radius." },
+      "md": { "$type": "dimension", "$value": { "value": 0.625, "unit": "rem" }, "$description": "Medium radius." },
+      "lg": { "$type": "dimension", "$value": { "value": 0.75, "unit": "rem" }, "$description": "Large radius." },
+      "xl": { "$type": "dimension", "$value": { "value": 1, "unit": "rem" }, "$description": "Extra-large radius." },
+      "pill": { "$type": "dimension", "$value": { "value": 9999, "unit": "px" }, "$description": "Pill radius."
+      }
+    },
+    "border-width": {
+      "default": { "$type": "dimension", "$value": { "value": 1, "unit": "px" }, "$description": "Default border width." }
+    },
+    "interaction-target": {
+      "min": { "$type": "dimension", "$value": { "value": 2.75, "unit": "rem" }, "$description": "Minimum interaction target size." }
+    },
+    "duration": {
+      "short": { "$type": "duration", "$value": { "value": 160, "unit": "ms" }, "$description": "Short motion duration." }
+    }
+  },
+  "color": {
+    "text": {
+      "primary": { "$type": "color", "$value": "{primitive.color.slate-900}", "$description": "Primary text." },
+      "secondary": { "$type": "color", "$value": "{primitive.color.slate-600}", "$description": "Secondary text." }
+    },
+    "surface": {
+      "default": { "$type": "color", "$value": "{primitive.color.neutral-0}", "$description": "Default content surface." },
+      "subtle": { "$type": "color", "$value": "{primitive.color.blue-50}", "$description": "Subtle shared surface." }
+    },
+    "border": {
+      "default": { "$type": "color", "$value": "{primitive.color.blue-200}", "$description": "Default border." },
+      "strong": { "$type": "color", "$value": "{primitive.color.blue-300}", "$description": "Strong border." }
+    },
+    "accent": { "$type": "color", "$value": "{primitive.color.blue-500}", "$description": "Shared accent." },
+    "action": {
+      "primary": { "$type": "color", "$value": "{primitive.color.blue-800}", "$description": "Primary action." },
+      "primary-hover": { "$type": "color", "$value": "{primitive.color.blue-900}", "$description": "Primary action hover or pressed state." },
+      "on-primary": { "$type": "color", "$value": "{primitive.color.neutral-0}", "$description": "Foreground on a primary action." }
+    },
+    "focus": {
+      "ring": { "$type": "color", "$value": "{primitive.color.blue-500}", "$description": "Focus ring." }
+    },
+    "status": {
+      "danger": {
+        "foreground": { "$type": "color", "$value": "{primitive.color.red-700}", "$description": "Danger foreground." },
+        "strong": { "$type": "color", "$value": "{primitive.color.red-800}", "$description": "Strong danger foreground." },
+        "surface": { "$type": "color", "$value": "{primitive.color.red-50}", "$description": "Danger surface." },
+        "border": { "$type": "color", "$value": "{primitive.color.red-200}", "$description": "Danger border." }
+      },
+      "warning": {
+        "foreground": { "$type": "color", "$value": "{primitive.color.amber-800}", "$description": "Warning foreground." },
+        "surface": { "$type": "color", "$value": "{primitive.color.amber-50}", "$description": "Warning surface." },
+        "border": { "$type": "color", "$value": "{primitive.color.amber-200}", "$description": "Warning border." }
+      },
+      "success": {
+        "foreground": { "$type": "color", "$value": "{primitive.color.teal-800}", "$description": "Success foreground." },
+        "surface": { "$type": "color", "$value": "{primitive.color.teal-50}", "$description": "Success surface." }
+      }
+    }
+  },
+  "font": {
+    "family": {
+      "body": {
+        "ja": { "$type": "fontFamily", "$value": "{primitive.font-family.ja-sans}", "$description": "Japanese body, UI, and editor font stack." }
+      }
+    },
+    "size": {
+      "small": { "$type": "dimension", "$value": "{primitive.font-size.small}", "$description": "Small text." },
+      "body": { "$type": "dimension", "$value": "{primitive.font-size.base}", "$description": "Body text." },
+      "editor": { "$type": "dimension", "$value": "{primitive.font-size.base}", "$description": "Editor text." }
+    },
+    "weight": {
+      "regular": { "$type": "fontWeight", "$value": "{primitive.font-weight.regular}", "$description": "Regular text." },
+      "medium": { "$type": "fontWeight", "$value": "{primitive.font-weight.medium}", "$description": "Medium text." },
+      "semibold": { "$type": "fontWeight", "$value": "{primitive.font-weight.semibold}", "$description": "Semibold text." },
+      "bold": { "$type": "fontWeight", "$value": "{primitive.font-weight.bold}", "$description": "Bold text." }
+    },
+    "line-height": {
+      "ui": { "$type": "number", "$value": "{primitive.line-height.ui}", "$description": "UI line height." },
+      "body": {
+        "ja": { "$type": "number", "$value": "{primitive.line-height.body-ja}", "$description": "Japanese body line height." }
+      },
+      "editor": { "$type": "number", "$value": "{primitive.line-height.editor}", "$description": "Editor line height." }
+    }
+  },
+  "spacing": {
+    "1": { "$type": "dimension", "$value": "{primitive.spacing.1}", "$description": "Spacing step 1." },
+    "2": { "$type": "dimension", "$value": "{primitive.spacing.2}", "$description": "Spacing step 2." },
+    "3": { "$type": "dimension", "$value": "{primitive.spacing.3}", "$description": "Spacing step 3." },
+    "4": { "$type": "dimension", "$value": "{primitive.spacing.4}", "$description": "Spacing step 4." },
+    "5": { "$type": "dimension", "$value": "{primitive.spacing.5}", "$description": "Spacing step 5." },
+    "6": { "$type": "dimension", "$value": "{primitive.spacing.6}", "$description": "Spacing step 6." },
+    "8": { "$type": "dimension", "$value": "{primitive.spacing.8}", "$description": "Spacing step 8." }
+  },
+  "radius": {
+    "sm": { "$type": "dimension", "$value": "{primitive.radius.sm}", "$description": "Small radius." },
+    "md": { "$type": "dimension", "$value": "{primitive.radius.md}", "$description": "Medium radius." },
+    "lg": { "$type": "dimension", "$value": "{primitive.radius.lg}", "$description": "Large radius." },
+    "xl": { "$type": "dimension", "$value": "{primitive.radius.xl}", "$description": "Extra-large radius." },
+    "pill": { "$type": "dimension", "$value": "{primitive.radius.pill}", "$description": "Pill radius." }
+  },
+  "border": {
+    "width": {
+      "default": { "$type": "dimension", "$value": "{primitive.border-width.default}", "$description": "Default border width." }
+    }
+  },
+  "interaction": {
+    "target": {
+      "min": { "$type": "dimension", "$value": "{primitive.interaction-target.min}", "$description": "Minimum interaction target size." }
+    }
+  },
+  "motion": {
+    "duration": {
+      "short": { "$type": "duration", "$value": "{primitive.duration.short}", "$description": "Short motion duration. Reduced motion is a consumer policy." }
+    }
+  }
+}

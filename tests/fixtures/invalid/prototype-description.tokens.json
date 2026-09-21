@@ -1,0 +1,6 @@
+{
+  "__proto__": { "$description": "This inherited value must not satisfy the root description." },
+  "primitive": {
+    "value": { "$type": "number", "$value": 1, "$description": "Primitive." }
+  }
+}
