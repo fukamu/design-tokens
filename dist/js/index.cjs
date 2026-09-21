@@ -1,10 +1,10 @@
 // Generated from tokens/fukamu.tokens.json. DO NOT EDIT.
 // Contract version: 0.1.0
-// Canonical source revision: 3b9477211dd967c33a44a25b96ac783ab50a098b
+// Canonical source revision: b57d1531f26c14e2f1f82440b9f150a3a185bd16
 "use strict";
 
 const contractVersion = "0.1.0";
-const sourceRevision = "3b9477211dd967c33a44a25b96ac783ab50a098b";
+const sourceRevision = "b57d1531f26c14e2f1f82440b9f150a3a185bd16";
 const tokens = Object.freeze({
   "border.width.default": {
     "type": "dimension",

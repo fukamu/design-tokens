@@ -1,47 +1,55 @@
 {
   "contractVersion": "0.1.0",
-  "sourceRevision": "3b9477211dd967c33a44a25b96ac783ab50a098b",
+  "sourceRevision": "b57d1531f26c14e2f1f82440b9f150a3a185bd16",
   "file": "FUKAMU Foundations",
   "collections": [
     {
       "name": "Primitives",
       "mode": "Value",
-      "variableCount": 43
+      "variableCount": 43,
+      "hiddenFromPublishing": true
     },
     {
       "name": "Color",
       "mode": "Light",
-      "variableCount": 20
+      "variableCount": 20,
+      "hiddenFromPublishing": false
     },
     {
       "name": "Typography",
       "mode": "Value",
-      "variableCount": 11
+      "variableCount": 11,
+      "hiddenFromPublishing": false
     },
     {
       "name": "Spacing",
       "mode": "Value",
-      "variableCount": 7
+      "variableCount": 7,
+      "hiddenFromPublishing": false
     },
     {
       "name": "Radius",
       "mode": "Value",
-      "variableCount": 5
+      "variableCount": 5,
+      "hiddenFromPublishing": false
     },
     {
       "name": "Border",
       "mode": "Value",
-      "variableCount": 1
+      "variableCount": 1,
+      "hiddenFromPublishing": false
     },
     {
       "name": "Interaction",
       "mode": "Value",
-      "variableCount": 1
+      "variableCount": 1,
+      "hiddenFromPublishing": false
     },
     {
       "name": "Motion",
       "mode": "Value",
-      "variableCount": 1
+      "variableCount": 1,
+      "hiddenFromPublishing": false
     }
   ],
   "remBasePx": 16,
@@ -50,6 +58,9 @@
     "primitiveColors": 18,
     "publicVariables": 46,
     "totalVariables": 89,
+    "explicitScopeVariables": 87,
+    "figmaNativeScopeVariables": 2,
+    "referenceOnlyVariables": 6,
     "textStyleCandidates": 7,
     "creatableTextStyles": 5,
     "effectStyles": 0,
@@ -57,6 +68,9 @@
   },
   "notes": [
     "Git is canonical; Figma must not become an independent value source.",
+    "The Primitives collection is hidden from Library publishing; published semantic Variables remain aliases to these same-file sources.",
+    "Scopes are explicit for COLOR, FLOAT, and STRING Variables. TIMING scope is Figma-native and is not assigned by the projection.",
+    "Unitless line-height Variables are percent references only; Text Styles apply direct PERCENT line height and must not bind these Variables.",
     "Noto Sans JP represents the Git fallback stack in Figma only: Hiragino Sans, Hiragino Kaku Gothic ProN, Yu Gothic UI, Yu Gothic, Meiryo, Noto Sans JP, Noto Sans CJK JP, system-ui, sans-serif.",
     "Notes dark mode and shadows are outside contract 0.1.0."
   ],
@@ -73,6 +87,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-border-width-default)"
@@ -91,6 +106,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-color-amber-200)"
@@ -114,6 +130,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-color-amber-50)"
@@ -137,6 +154,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-color-amber-800)"
@@ -160,6 +178,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-color-blue-200)"
@@ -183,6 +202,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-color-blue-300)"
@@ -206,6 +226,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-color-blue-50)"
@@ -229,6 +250,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-color-blue-500)"
@@ -252,6 +274,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-color-blue-800)"
@@ -275,6 +298,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-color-blue-900)"
@@ -298,6 +322,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-color-neutral-0)"
@@ -321,6 +346,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-color-red-200)"
@@ -344,6 +370,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-color-red-50)"
@@ -367,6 +394,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-color-red-700)"
@@ -390,6 +418,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-color-red-800)"
@@ -413,6 +442,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-color-slate-600)"
@@ -436,6 +466,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-color-slate-900)"
@@ -459,6 +490,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-color-teal-50)"
@@ -482,6 +514,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-color-teal-800)"
@@ -505,7 +538,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "TIMING",
-      "scopes": [],
+      "scopePolicy": "figma-native",
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-duration-short)"
       },
@@ -523,6 +556,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "STRING",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-font-family-ja-sans)"
@@ -548,6 +582,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-font-size-base)"
@@ -566,6 +601,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-font-size-small)"
@@ -584,6 +620,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-font-weight-bold)"
@@ -599,6 +636,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-font-weight-medium)"
@@ -614,6 +652,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-font-weight-regular)"
@@ -629,6 +668,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-font-weight-semibold)"
@@ -644,6 +684,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-interaction-target-min)"
@@ -662,7 +703,9 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
+      "bindingPolicy": "reference-only",
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-line-height-body-ja)"
       },
@@ -677,7 +720,9 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
+      "bindingPolicy": "reference-only",
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-line-height-editor)"
       },
@@ -692,7 +737,9 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
+      "bindingPolicy": "reference-only",
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-line-height-ui)"
       },
@@ -707,6 +754,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-radius-lg)"
@@ -725,6 +773,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-radius-md)"
@@ -743,6 +792,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-radius-pill)"
@@ -761,6 +811,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-radius-sm)"
@@ -779,6 +830,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-radius-xl)"
@@ -797,6 +849,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-spacing-1)"
@@ -815,6 +868,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-spacing-2)"
@@ -833,6 +887,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-spacing-3)"
@@ -851,6 +906,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-spacing-4)"
@@ -869,6 +925,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-spacing-5)"
@@ -887,6 +944,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-spacing-6)"
@@ -905,6 +963,7 @@
       "collection": "Primitives",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [],
       "codeSyntax": {
         "WEB": "var(--fukamu-primitive-spacing-8)"
@@ -923,6 +982,7 @@
       "collection": "Border",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "STROKE_FLOAT"
       ],
@@ -943,6 +1003,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL",
@@ -966,6 +1027,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "TEXT_FILL",
         "SHAPE_FILL"
@@ -987,6 +1049,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL"
@@ -1008,6 +1071,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL"
@@ -1029,6 +1093,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "STROKE_COLOR"
       ],
@@ -1049,6 +1114,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "STROKE_COLOR"
       ],
@@ -1069,6 +1135,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "STROKE_COLOR"
       ],
@@ -1089,6 +1156,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "STROKE_COLOR"
       ],
@@ -1109,6 +1177,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "TEXT_FILL",
         "SHAPE_FILL",
@@ -1131,6 +1200,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "TEXT_FILL",
         "SHAPE_FILL",
@@ -1153,6 +1223,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL"
@@ -1174,6 +1245,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "TEXT_FILL",
         "SHAPE_FILL",
@@ -1196,6 +1268,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL"
@@ -1217,6 +1290,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "STROKE_COLOR"
       ],
@@ -1237,6 +1311,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "TEXT_FILL",
         "SHAPE_FILL",
@@ -1259,6 +1334,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL"
@@ -1280,6 +1356,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL"
@@ -1301,6 +1378,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "FRAME_FILL",
         "SHAPE_FILL"
@@ -1322,6 +1400,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "TEXT_FILL"
       ],
@@ -1342,6 +1421,7 @@
       "collection": "Color",
       "mode": "Light",
       "figmaType": "COLOR",
+      "scopePolicy": "explicit",
       "scopes": [
         "TEXT_FILL"
       ],
@@ -1362,6 +1442,7 @@
       "collection": "Typography",
       "mode": "Value",
       "figmaType": "STRING",
+      "scopePolicy": "explicit",
       "scopes": [
         "FONT_FAMILY"
       ],
@@ -1382,9 +1463,9 @@
       "collection": "Typography",
       "mode": "Value",
       "figmaType": "FLOAT",
-      "scopes": [
-        "LINE_HEIGHT"
-      ],
+      "scopePolicy": "explicit",
+      "scopes": [],
+      "bindingPolicy": "reference-only",
       "codeSyntax": {
         "WEB": "var(--fukamu-font-line-height-body-ja)"
       },
@@ -1402,9 +1483,9 @@
       "collection": "Typography",
       "mode": "Value",
       "figmaType": "FLOAT",
-      "scopes": [
-        "LINE_HEIGHT"
-      ],
+      "scopePolicy": "explicit",
+      "scopes": [],
+      "bindingPolicy": "reference-only",
       "codeSyntax": {
         "WEB": "var(--fukamu-font-line-height-editor)"
       },
@@ -1422,9 +1503,9 @@
       "collection": "Typography",
       "mode": "Value",
       "figmaType": "FLOAT",
-      "scopes": [
-        "LINE_HEIGHT"
-      ],
+      "scopePolicy": "explicit",
+      "scopes": [],
+      "bindingPolicy": "reference-only",
       "codeSyntax": {
         "WEB": "var(--fukamu-font-line-height-ui)"
       },
@@ -1442,6 +1523,7 @@
       "collection": "Typography",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "FONT_SIZE"
       ],
@@ -1462,6 +1544,7 @@
       "collection": "Typography",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "FONT_SIZE"
       ],
@@ -1482,6 +1565,7 @@
       "collection": "Typography",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "FONT_SIZE"
       ],
@@ -1502,6 +1586,7 @@
       "collection": "Typography",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "FONT_WEIGHT"
       ],
@@ -1522,6 +1607,7 @@
       "collection": "Typography",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "FONT_WEIGHT"
       ],
@@ -1542,6 +1628,7 @@
       "collection": "Typography",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "FONT_WEIGHT"
       ],
@@ -1562,6 +1649,7 @@
       "collection": "Typography",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "FONT_WEIGHT"
       ],
@@ -1582,6 +1670,7 @@
       "collection": "Interaction",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "WIDTH_HEIGHT"
       ],
@@ -1602,7 +1691,7 @@
       "collection": "Motion",
       "mode": "Value",
       "figmaType": "TIMING",
-      "scopes": [],
+      "scopePolicy": "figma-native",
       "codeSyntax": {
         "WEB": "var(--fukamu-motion-duration-short)"
       },
@@ -1620,6 +1709,7 @@
       "collection": "Radius",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "CORNER_RADIUS"
       ],
@@ -1640,6 +1730,7 @@
       "collection": "Radius",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "CORNER_RADIUS"
       ],
@@ -1660,6 +1751,7 @@
       "collection": "Radius",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "CORNER_RADIUS"
       ],
@@ -1680,6 +1772,7 @@
       "collection": "Radius",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "CORNER_RADIUS"
       ],
@@ -1700,6 +1793,7 @@
       "collection": "Radius",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "CORNER_RADIUS"
       ],
@@ -1720,6 +1814,7 @@
       "collection": "Spacing",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "GAP"
       ],
@@ -1740,6 +1835,7 @@
       "collection": "Spacing",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "GAP"
       ],
@@ -1760,6 +1856,7 @@
       "collection": "Spacing",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "GAP"
       ],
@@ -1780,6 +1877,7 @@
       "collection": "Spacing",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "GAP"
       ],
@@ -1800,6 +1898,7 @@
       "collection": "Spacing",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "GAP"
       ],
@@ -1820,6 +1919,7 @@
       "collection": "Spacing",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "GAP"
       ],
@@ -1840,6 +1940,7 @@
       "collection": "Spacing",
       "mode": "Value",
       "figmaType": "FLOAT",
+      "scopePolicy": "explicit",
       "scopes": [
         "GAP"
       ],
@@ -1867,6 +1968,7 @@
         "unit": "PERCENT",
         "value": 145
       },
+      "lineHeightApplication": "DIRECT_PERCENT",
       "tokenPaths": [
         "font.family.body.ja",
         "font.size.small",
@@ -1885,6 +1987,7 @@
         "unit": "PERCENT",
         "value": 145
       },
+      "lineHeightApplication": "DIRECT_PERCENT",
       "tokenPaths": [
         "font.family.body.ja",
         "font.size.small",
@@ -1903,6 +2006,7 @@
         "unit": "PERCENT",
         "value": 170
       },
+      "lineHeightApplication": "DIRECT_PERCENT",
       "tokenPaths": [
         "font.family.body.ja",
         "font.size.body",
@@ -1921,6 +2025,7 @@
         "unit": "PERCENT",
         "value": 170
       },
+      "lineHeightApplication": "DIRECT_PERCENT",
       "tokenPaths": [
         "font.family.body.ja",
         "font.size.body",
@@ -1939,6 +2044,7 @@
         "unit": "PERCENT",
         "value": 175
       },
+      "lineHeightApplication": "DIRECT_PERCENT",
       "tokenPaths": [
         "font.family.body.ja",
         "font.size.editor",
@@ -1991,6 +2097,7 @@
         "unit": "PERCENT",
         "value": 145
       },
+      "lineHeightApplication": "DIRECT_PERCENT",
       "tokenPaths": [
         "font.family.body.ja",
         "font.size.small",
@@ -2009,6 +2116,7 @@
         "unit": "PERCENT",
         "value": 145
       },
+      "lineHeightApplication": "DIRECT_PERCENT",
       "tokenPaths": [
         "font.family.body.ja",
         "font.size.small",
@@ -2027,6 +2135,7 @@
         "unit": "PERCENT",
         "value": 170
       },
+      "lineHeightApplication": "DIRECT_PERCENT",
       "tokenPaths": [
         "font.family.body.ja",
         "font.size.body",
@@ -2045,6 +2154,7 @@
         "unit": "PERCENT",
         "value": 170
       },
+      "lineHeightApplication": "DIRECT_PERCENT",
       "tokenPaths": [
         "font.family.body.ja",
         "font.size.body",
@@ -2063,6 +2173,7 @@
         "unit": "PERCENT",
         "value": 175
       },
+      "lineHeightApplication": "DIRECT_PERCENT",
       "tokenPaths": [
         "font.family.body.ja",
         "font.size.editor",
