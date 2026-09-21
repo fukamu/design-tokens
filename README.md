@@ -96,9 +96,9 @@ Archive dependencies, sibling-directory `file:` dependencies, links, floating br
 
 Scopes are explicitly assigned on all 87 COLOR, FLOAT, and STRING Variables, including empty scopes for primitives and reference-only line-height Variables. The two TIMING Variables omit `scopes` and declare `scopePolicy: "figma-native"` because Figma does not expose a configurable TIMING scope. Unitless line-height values map to percent references (145, 170, and 175), but must not be bound to Text Styles: Figma interprets a bound FLOAT as pixels. Text Styles instead apply direct PERCENT line height and retain the source token path as provenance.
 
-Figma uses Noto Sans JP only as the approved Windows/Android design representative; the Git system-font fallback stack remains the code contract and no web-font dependency is introduced. Two 600-weight Text Style candidates are explicitly unsupported because the connected Noto Sans JP family lacks an exact 600 style. Effect Styles and components are not created by contract `0.1.0`.
+Figma uses Noto Sans JP only as the approved Windows/Android design representative; the Git system-font fallback stack remains the code contract and no web-font dependency is introduced. Two 600-weight Text Style candidates are explicitly unsupported because the connected Noto Sans JP family lacks an exact 600 style. Contract `0.1.0` creates no Effect Styles and records three shared component sets with ten variant components: `Action/Button`, `Form/Text field`, and `Feedback/Status message`. See [the Phase 1 component handoff](docs/figma/phase-1-components.md) for exact node IDs, properties, bindings, QA, exclusions, and rollback.
 
-Git remains canonical. Do not create or publish Figma assets until the recorded source revision and separate Figma authorization are confirmed.
+Git remains canonical. Do not create or publish Figma assets until the recorded source revision and separate Figma authorization are confirmed. Component examples and QA frames are documentation only and are not Library assets.
 
 ## Development
 

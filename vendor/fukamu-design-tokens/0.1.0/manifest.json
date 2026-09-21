@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "packageName": "@fukamu/design-tokens",
   "contractVersion": "0.1.0",
-  "sourceRevision": "b57d1531f26c14e2f1f82440b9f150a3a185bd16",
+  "sourceRevision": "fce23b267d466f9a3fe2689c0197d4c4192cec9c",
   "mode": "light",
   "generatedBy": "scripts/generate.mjs",
   "updateCommand": "npm run generate -- --source-revision <40-character-canonical-source-commit>",
@@ -10,31 +10,31 @@
   "artifacts": [
     {
       "path": "css/tokens.css",
-      "sha256": "f18a82445a7e27db4bedcde9710c5c4744af0c1486e0d55b3cbd65d494ff2213"
+      "sha256": "555e3e922b44ee406f66bf83998e02655581ca7748f524823400eae0267252f7"
     },
     {
       "path": "figma/mapping.json",
-      "sha256": "32d994c578cb0723304424a3a0846fafdcfbc3db76a2356f41f528899c9dbf6f"
+      "sha256": "108f56858ecd7b3b658acd6f61a19f98fbcbdbc6d24acfe47d3869e6ea604c9b"
     },
     {
       "path": "js/index.cjs",
-      "sha256": "a77c369e62885579ae6ec92a38ae8842c0730b622a94b31d700d281adafa0b99"
+      "sha256": "5f0f0b2eeecc6acc26ad7ad3eab5e5433423d1a6551c9416d84e9939979cf17a"
     },
     {
       "path": "js/index.mjs",
-      "sha256": "d76293ed4618d825f31de1716c3ddde7879768f67967d0dcfa832b891a86cda8"
+      "sha256": "8d1a9e7d1449b9e7d0f3fca504f0062b05d950ca50a005db396475b7e2d6843c"
     },
     {
       "path": "json/tokens.json",
-      "sha256": "7927257131b737631e31bc66479584eeaa3f7f86bdc44fcaed1d7c67249b2ba3"
+      "sha256": "d83b25583b1d231ac1b1c7e0758df0e3fe58a457cfe16dee58f21c83abd75bb2"
     },
     {
       "path": "reference/tokens.md",
-      "sha256": "c52f4b697e02efbd18a0999be06c88aa8945ac1c9fa8d2d7b5237fbc82426b03"
+      "sha256": "d24ddb0d7da8af2a4d8063981adbc331c2f487c03dcab419a4ce8602c1389986"
     },
     {
       "path": "types/index.d.ts",
-      "sha256": "9c93d7f1de5db9f04290bf24db359e7b094de3dd55a17a3006760cc5aef8e43e"
+      "sha256": "6f32cd2875446ea65ed2ff917ba1946484fce0e8ee540e6f7c773b23d5faeb75"
     }
   ]
 }

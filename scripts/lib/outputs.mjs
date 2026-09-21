@@ -13,6 +13,7 @@ import {
   toCssValue,
 } from "./contract.mjs";
 import { parseJsonStrict } from "./strict-json.mjs";
+import { FIGMA_COMPONENT_QA, FIGMA_COMPONENT_SETS } from "./figma-components.mjs";
 
 export const SOURCE_REVISION_PATTERN = /^[0-9a-f]{40}$/u;
 
@@ -312,7 +313,8 @@ function generateFigmaMapping(allTokens, sourceRevision) {
       textStyleCandidates: supportedTextStyles.length + unsupportedTextStyles.length,
       creatableTextStyles: supportedTextStyles.length,
       effectStyles: 0,
-      components: 0,
+      componentSets: FIGMA_COMPONENT_SETS.length,
+      components: FIGMA_COMPONENT_SETS.reduce((count, set) => count + set.variants.length, 0),
     },
     notes: [
       "Git is canonical; Figma must not become an independent value source.",
@@ -332,7 +334,8 @@ function generateFigmaMapping(allTokens, sourceRevision) {
     textStyleCandidates: [...supportedTextStyles, ...unsupportedTextStyles],
     textStyles: supportedTextStyles,
     effectStyles: [],
-    components: [],
+    components: FIGMA_COMPONENT_SETS,
+    componentQa: FIGMA_COMPONENT_QA,
   });
 }
 

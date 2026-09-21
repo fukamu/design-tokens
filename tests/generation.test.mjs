@@ -107,5 +107,54 @@ test("Figma mapping preserves all aliases and approved lossy boundaries", async 
     "Text/Body/Semibold",
   ]);
   assert.equal(mapping.effectStyles.length, 0);
-  assert.equal(mapping.components.length, 0);
+  assert.equal(mapping.counts.componentSets, 3);
+  assert.equal(mapping.counts.components, 10);
+  assert.deepEqual(mapping.components.map(({ name, nodeId }) => [name, nodeId]), [
+    ["Action/Button", "45:2"],
+    ["Form/Text field", "49:3"],
+    ["Feedback/Status message", "52:18"],
+  ]);
+  const componentsByName = new Map(mapping.components.map((component) => [component.name, component]));
+  assert.deepEqual(componentsByName.get("Action/Button").variants.map(({ name, nodeId }) => [name, nodeId]), [
+    ["State=Default", "44:2"],
+    ["State=Hover", "44:4"],
+    ["State=Pressed", "44:6"],
+    ["State=Focus", "44:8"],
+  ]);
+  assert.deepEqual(componentsByName.get("Action/Button").properties.map(({ name, type }) => [name, type]), [
+    ["Label", "TEXT"],
+    ["State", "VARIANT"],
+  ]);
+  assert.deepEqual(componentsByName.get("Form/Text field").properties.map(({ name, type }) => [name, type]), [
+    ["Label", "TEXT"],
+    ["Value", "TEXT"],
+    ["Helper text", "TEXT"],
+    ["Show label", "BOOLEAN"],
+    ["Show helper", "BOOLEAN"],
+    ["State", "VARIANT"],
+  ]);
+  assert.deepEqual(componentsByName.get("Feedback/Status message").properties.map(({ name, type }) => [name, type]), [
+    ["Title", "TEXT"],
+    ["Message", "TEXT"],
+    ["Show title", "BOOLEAN"],
+    ["Tone", "VARIANT"],
+  ]);
+  const success = componentsByName.get("Feedback/Status message").variants.find(({ name }) => name === "Tone=Success");
+  assert.equal(success.border, "none");
+  assert.equal(success.tokenBindings.includes("color.status.success.border"), false);
+  const allBindings = mapping.components.flatMap((component) => [
+    ...component.sharedTokenBindings,
+    ...component.variants.flatMap((variant) => variant.tokenBindings),
+  ]);
+  assert.ok(allBindings.every((path) => byPath.has(path)));
+  assert.ok(allBindings.every((path) => !path.startsWith("primitive.")));
+  const textStyleNames = new Set(mapping.textStyles.map(({ name }) => name));
+  assert.ok(mapping.components.flatMap((component) => component.textStyles).every((name) => textStyleNames.has(name)));
+  assert.deepEqual(mapping.componentQa, {
+    viewportNodeId: "56:3",
+    viewportWidthPx: 412,
+    instanceNodeIds: ["56:5", "56:7", "56:14", "56:21", "56:24"],
+    mainComponentPropagation: "verified-and-reverted",
+    directPrimitiveBindings: 0,
+  });
 });
